@@ -21,67 +21,31 @@ public class Pokemon {
     public Pokemon() {}
 
     // All of the get methods.
-    /**
-     * Get the id for this Pokemon.
-     *
-     * @return the id for this Pokemon.
-     */
+    /** @return the id for this Pokemon. */
     public int getId() { return id; }
 
-    /**
-     * Get the num for this Pokemon.
-     *
-     * @return the num for this Pokemon.
-     */
+    /** @return the pokemonNumber for this Pokemon. */
     public String getPokemonNumber() { return pokemonNumber; }
 
-    /**
-     * Get the name for this Pokemon.
-     *
-     * @return the name for this Pokemon.
-     */
+    /** @return the name for this Pokemon. */
     public String getName() { return name; }
 
-    /**
-     * Get the type for this Pokemon.
-     *
-     * @return the type for this Pokemon.
-     */
+    /** @return the types for this Pokemon. */
     public String[] getType() { return type; }
 
-    /**
-     * Get the height for this Pokemon.
-     *
-     * @return the height for this Pokemon.
-     */
+    /** @return the height for this Pokemon. */
     public String getHeight() { return height; }
 
-    /**
-     * Get the weight for this Pokemon.
-     *
-     * @return the weight for this Pokemon.
-     */
+    /** @return the weight for this Pokemon. */
     public String getWeight() { return weight; }
 
-    /**
-     * Get the candy for this Pokemon.
-     *
-     * @return the candy for this Pokemon.
-     */
+    /** @return the candyName for this Pokemon. */
     public String getCandyName() { return candyName; }
 
-    /**
-     * Get the candy_count for this Pokemon.
-     *
-     * @return the candy_count for this Pokemon.
-     */
+    /** @return the candyToEvolve for this Pokemon. */
     public int getCandyToEvolve() { return candyToEvolve; }
 
-    /**
-     * Get the weaknesses for this Pokemon.
-     *
-     * @return the weaknesses for this Pokemon.
-     */
+    /** @return the weaknesses for this Pokemon. */
     public String[] getWeaknesses() { return weaknesses; }
 
 
