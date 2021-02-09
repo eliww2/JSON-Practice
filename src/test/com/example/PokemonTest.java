@@ -12,6 +12,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -74,48 +75,55 @@ public final class PokemonTest {
         @Test
         public void nameReturnedTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(4, generationOne.searchForName("nido").length);
+            assertEquals(6, generationOne.searchForName("nido").size());
         }
 
         @Test
         public void nameFoundTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(0, generationOne.searchForName("q").length);
+            assertEquals(0, generationOne.searchForName("q").size());
         }
 
         // TypeSearch method tests
         @Test
         public void typeFoundTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(12, generationOne.searchForType("fire").length);
+            assertEquals(12, generationOne.searchForType("fire").size());
         }
 
         @Test
         public void typeNotFoundTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(0, generationOne.searchForType("fi").length);
+            assertEquals(0, generationOne.searchForType("fi").size());
         }
 
         // WeaknessSearch method tests
         @Test
         public void weaknessFoundTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(11, generationOne.searchForWeakness("fairy").length);
+            assertEquals(11, generationOne.searchForWeakness("fairy").size());
         }
 
         @Test
         public void weaknessNotFoundTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(0, generationOne.searchForWeakness("fair").length);
+            assertEquals(0, generationOne.searchForWeakness("fair").size());
         }
 
-        // HeightSearch method tests
+        // HeightSearch method test
+        @Test
+        public void heightInclusiveTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            String snorlax = generationOne.searchHeightRange(450, 460).get(0).getName();
+            assertEquals("Snorlax", snorlax);
+        }
+
         @Test
         public void heightSearchTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            String snorlax = generationOne.searchHeightRange(450, 460)[0].getName();
-            assertEquals("Snorlax", snorlax);
+            assertEquals(150, generationOne.searchHeightRange(0, 459.9).size());
         }
+
     }
 
 
