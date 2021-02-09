@@ -1,5 +1,7 @@
 package com.example;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,6 +105,24 @@ public class Pokedex {
         }
 
         return pokemonWithHeight;
+    }
+
+    // Analysis methods
+
+    public double averageWeight(Pokemon[] pokemon) {
+        throw new NotImplementedException();
+    }
+
+    public double modeCandyToEvolve(Pokemon[] pokemon) {
+        throw new NotImplementedException();
+    }
+
+    public double rangeOfHeight(Pokemon[] pokemon) {
+        throw new NotImplementedException();
+    }
+
+    public double longestName(Pokemon[] pokemon) {
+        throw new NotImplementedException();
     }
 
 }

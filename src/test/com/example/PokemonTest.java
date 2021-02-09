@@ -31,10 +31,11 @@ import static org.junit.Assert.assertEquals;
 4. Returns Pokemon within height Range (inclusive)
 
 (Analysis methods)
-1.
-2.
-3.
-4.
+1. Test that the average weight of an array of pokemon is right.
+2. Test that the number of times a candyToEvolve is the mode.
+3. Test the range of height in an array of pokemon.
+4. Test the longest name in an array of pokemon.
+  a. What if more than one have the same length?
 
  */
 
@@ -126,5 +127,18 @@ public final class PokemonTest {
 
     }
 
+    public static class AnalysisTest {
+        @Before public void setUp() {
+            PokemonTest.setUp();
+        }
+
+        // AverageWeight tests
+
+        // ModeCandyToEvolve tests
+
+        // RangeOfHeight tests
+
+        // LongestName test
+    }
 
 }
