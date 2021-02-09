@@ -13,6 +13,5 @@ public class Main {
         Gson gson = new Gson();
         Reader jsonReader = Files.newBufferedReader(Paths.get("src/main/resources/example.json"));
         Pokedex gen1 = gson.fromJson(jsonReader, Pokedex.class);
-
     }
 }
