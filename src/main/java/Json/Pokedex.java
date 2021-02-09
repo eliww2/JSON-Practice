@@ -3,5 +3,9 @@ package Json;
 import java.util.List;
 
 public class Pokedex {
-    private List<Pokemon> pokemon;
+    public Pokemon[] pokemon;
+
+    public Pokedex(Pokemon[] setPokemon) {
+        pokemon = setPokemon;
+    }
 }
