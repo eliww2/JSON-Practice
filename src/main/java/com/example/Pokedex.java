@@ -13,19 +13,19 @@ public class Pokedex {
 
     // Filter methods
 
-    public Pokemon[] searchForPokemon(String request) {
+    public Pokemon[] searchForName(String name) {
         throw new NotImplementedException();
     }
 
-    public Pokemon[] searchForType(String request) {
+    public Pokemon[] searchForType(String type) {
         throw new NotImplementedException();
     }
 
-    public Pokemon[] searchForWeakness(String request) {
+    public Pokemon[] searchForWeakness(String weakness) {
         throw new NotImplementedException();
     }
 
-    public Pokemon[] searchHeightRange(String request) {
+    public Pokemon[] searchHeightRange(double minHeight, double maxHeight) {
         throw new NotImplementedException();
     }
 }

@@ -23,6 +23,8 @@ import static org.junit.Assert.assertEquals;
 
 (Filters methods)
 1. Search for Pokemon, this should only be the start of the name
+  a. Check that if a pokemon starts with a certain string the correct number is returned.
+  b. Check that if no pokemon starts with a certain string the array is empty.
 2. Returns just Pokemon the with the type of request
 3. Returns just Pokemon the with the weakness of request
 4. Returns Pokemon within height Range (inclusive)
@@ -68,30 +70,52 @@ public final class PokemonTest {
             PokemonTest.setUp();
         }
 
+        // PokemonSearch method tests
         @Test
-        public void pokemonSearchTest() {
+        public void nameReturnedTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assert false;
+            assertEquals(4, generationOne.searchForName("nido").length);
         }
 
         @Test
-        public void typeSearchTest() {
+        public void nameFoundTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assert false;
+            assertEquals(0, generationOne.searchForName("q").length);
+        }
+
+        // TypeSearch method tests
+        @Test
+        public void typeFoundTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            assertEquals(12, generationOne.searchForType("fire").length);
         }
 
         @Test
-        public void weaknessSearchTest() {
+        public void typeNotFoundTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assert false;
+            assertEquals(0, generationOne.searchForType("fi").length);
         }
 
+        // WeaknessSearch method tests
+        @Test
+        public void weaknessFoundTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            assertEquals(11, generationOne.searchForWeakness("fairy").length);
+        }
+
+        @Test
+        public void weaknessNotFoundTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            assertEquals(0, generationOne.searchForWeakness("fair").length);
+        }
+
+        // HeightSearch method tests
         @Test
         public void heightSearchTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assert false;
+            String snorlax = generationOne.searchHeightRange(450, 460)[0].getName();
+            assertEquals("Snorlax", snorlax);
         }
-
     }
 
 
