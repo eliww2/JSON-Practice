@@ -14,11 +14,11 @@ public class Pokemon {
     @SerializedName("candy")
     private String candyName;
     @SerializedName("candy_count")
-    private int candyToEvolve;     // I want to change this name to candyToEvolve
+    private int candyToEvolve;
     private String[] weaknesses;
 
     /** Empty Constructor. */
-    Pokemon () {}
+    public Pokemon() {}
 
     // All of the get methods.
     /**

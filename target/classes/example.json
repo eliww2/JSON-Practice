@@ -111,7 +111,7 @@
     "spawn_chance": 0.253,
     "avg_spawns": 25.3,
     "spawn_time": "08:45",
-    "	ipliers": [1.65],
+    "multipliers": [1.65],
     "weaknesses": [
       "Water",
       "Ground",

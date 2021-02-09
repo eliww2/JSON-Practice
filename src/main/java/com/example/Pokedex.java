@@ -1,8 +1,11 @@
 package com.example;
 
 public class Pokedex {
-    public Pokemon[] pokemon;
+    private Pokemon[] pokemon;
+
+    public Pokemon[] getPokemon() {
+        return pokemon;
+    }
 
     public Pokedex() { }
-
 }
