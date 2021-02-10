@@ -3,6 +3,9 @@ package com.example;
 import com.google.gson.annotations.SerializedName;
 
 public class Pokemon {
+    public final static int WEIGHT_OFFSET = 3;
+    public final static int HEIGHT_OFFSET = 2;
+
 
     private int id;
     @SerializedName("num")
