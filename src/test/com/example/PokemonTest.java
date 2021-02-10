@@ -133,21 +133,21 @@ public final class PokemonTest {
         @Test
         public void averageWeightTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(46, Pokedex.averageWeight(generationOne.getPokemon()));
+            assertEquals(46, Pokedex.averageWeight(generationOne.getPokemon()), .5);
         }
 
         // ModeCandyToEvolve tests
         @Test
-        public void ModeCandyTest() {
+        public void heightWeightRatioTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(50, Pokedex.modeCandyToEvolve(generationOne.getPokemon()));
+            assertEquals(9.71, Pokedex.weightHeightRatio(generationOne.getPokemon()[0]), .5);
         }
 
         // maxHeight tests
         @Test
         public void maxHeightTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(0, Pokedex.maxHeight(generationOne.getPokemon()));
+            assertEquals("8.79 m", Pokedex.maxHeight(generationOne.getPokemon()));
         }
 
         // LongestName test
