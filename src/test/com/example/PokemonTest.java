@@ -58,7 +58,7 @@ public final class PokemonTest {
 
         // Check Json is deserializing properly
         @Test
-        public void DeserializeTest() {
+        public void deserializeTest() {
           Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
           assertEquals(1, generationOne.getPokemon()[0].getId());
         }

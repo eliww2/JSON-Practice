@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 
 
 public class Main {
+    //Prints implemented Pokedex function results.
     public static void main(String[] args) throws IOException {
         //Initialization
         Gson gson = new Gson();
@@ -77,6 +78,4 @@ public class Main {
                 + Pokedex.longestNameId(generationOne.getPokemon()));
 
     }
-
-
 }
