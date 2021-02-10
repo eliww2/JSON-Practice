@@ -1,7 +1,6 @@
 package com.example;
 
 import com.sun.istack.internal.NotNull;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +85,10 @@ public class Pokedex {
     public List<Pokemon> searchWeightRange(double minWeight, double maxWeight) {
         List<Pokemon> pokemonWithWeight = new ArrayList<>();
 
+        if (minWeight >= maxWeight) {
+            throw new IllegalArgumentException();
+        }
+
         for (int pokemonIndex = 0; pokemonIndex < pokemon.length; pokemonIndex++) {
             String weightString = pokemon[pokemonIndex].getWeight();
             double weightDouble =
@@ -140,7 +143,7 @@ public class Pokedex {
         String heightString = pokemon.getHeight();
         double heightDouble =
                 Double.parseDouble(heightString.substring(0, weightString.length() - Pokemon.HEIGHT_OFFSET));
-        
+
         return weightDouble / heightDouble;
     }
 
