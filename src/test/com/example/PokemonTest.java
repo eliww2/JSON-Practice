@@ -2,19 +2,16 @@ package com.example;
 
 
 import com.google.gson.Gson;
-import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 
 /* What needs to be checked?
@@ -115,14 +112,14 @@ public final class PokemonTest {
         @Test
         public void heightInclusiveTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            String snorlax = generationOne.searchHeightRange(450, 460).get(0).getName();
+            String snorlax = generationOne.searchWeightRange(450, 460).get(0).getName();
             assertEquals("Snorlax", snorlax);
         }
 
         @Test
         public void heightSearchTest() {
             Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
-            assertEquals(150, generationOne.searchHeightRange(0, 459.9).size());
+            assertEquals(150, generationOne.searchWeightRange(0, 459.9).size());
         }
 
     }
@@ -133,12 +130,32 @@ public final class PokemonTest {
         }
 
         // AverageWeight tests
+        @Test
+        public void averageWeightTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            assertEquals(46, Pokedex.averageWeight(generationOne.getPokemon()));
+        }
 
         // ModeCandyToEvolve tests
+        @Test
+        public void ModeCandyTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            assertEquals(50, Pokedex.modeCandyToEvolve(generationOne.getPokemon()));
+        }
 
-        // RangeOfHeight tests
+        // maxHeight tests
+        @Test
+        public void maxHeightTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            assertEquals(0, Pokedex.maxHeight(generationOne.getPokemon()));
+        }
 
         // LongestName test
+        @Test
+        public void LongestNameTest() {
+            Pokedex generationOne = gson.fromJson(jsonReader, Pokedex.class);
+            assertEquals(4, Pokedex.longestNameId(generationOne.getPokemon()));
+        }
     }
 
 }
